@@ -11,8 +11,8 @@ body {
 
 /* Typography Styles */
 h1, h3 {
-    font-family: "Press Start 2P", system-ui;
-    font-weight: 400;
+  font-family: "Orbitron", sans-serif;
+    font-weight: 900;
     font-style: normal;
     line-height: 1.75;
 }
