@@ -86,3 +86,13 @@ footer {
         font-size: 1.2rem;
     }
 }
+
+#particle-canvas {
+    position: fixed; /* NEW: Fixed position to cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* NEW: Place the canvas behind all other content */
+    pointer-events: none; /* NEW: Ensures content remains clickable */
+}
