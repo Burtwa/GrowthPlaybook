@@ -19,7 +19,11 @@ h1, h3 {
 
 h3 {
     padding: 30px 0px;
-    font-size: 1.5rem; /* Use rem for scalability */
+    font-size: 2.2rem; /* Use rem for scalability */
+}
+
+h4 {
+  font-size: 1.5rem;
 }
 
 h1 {
@@ -83,8 +87,12 @@ footer {
 
     h3 {
         /* Reduce h3 font size for small screens */
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
+  
+  h4 {
+    font-size: 1.2rem;
+  }
 }
 
 #particle-canvas {
