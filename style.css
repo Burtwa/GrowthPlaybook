@@ -1,45 +1,58 @@
-
+/* Base Styles for all screens - Mobile-first approach is generally best */
 body {
-  background: black;
-  color: white;
-  text-align: center;
-  list-style-position: inside;
-  font-family: "Poppins"
+    background: black;
+    color: white;
+    text-align: center;
+    list-style-position: inside;
+    font-family: "Poppins", sans-serif; /* Add a generic fallback font */
+    /* Use a relative font-size on the body for better accessibility */
+    font-size: 16px; 
 }
 
+/* Typography Styles */
 h1, h3 {
     font-family: "Press Start 2P", system-ui;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.75;
-
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.75;
 }
 
 h3 {
-  padding: 30px 0px;
-  font-size: 30px;
+    padding: 30px 0px;
+    font-size: 1.5rem; /* Use rem for scalability */
 }
 
 h1 {
-  font-size: 50px;
+    /* Use 'clamp' for a fluid font size that is capped by a min/max value */
+    font-size: clamp(30px, 10vw, 50px);
+}
+
+h2 {
+    /* Ensure h2 naturally wraps without the fixed <br> */
+    padding: 0 10px; 
 }
 
 .blue {
-  color: #00ffcf;
+    color: #00ffcf;
 }
 
 .start {
-  padding: 50px 0px;
+    padding: 50px 0px;
 }
 
+/* Responsive Container Styling */
 .container {
-    /* Container Styling */
-    font-size: 20px;
+    /* Use max-width and percentage width for responsiveness */
+    max-width: 500px;
+    width: 90%; 
+    
+    font-size: 1.25rem; /* Relative font size */
     border-radius: 30px;
-    width: 500px;
+    
     /* Centering the Container */
     margin-left: auto;
     margin-right: auto;
+    
     /* Aligning the Content */
     text-align: left;
     padding: 10px;
@@ -48,7 +61,7 @@ h1 {
 /* Specific adjustment for the list items */
 .container ul {
     text-align: left;
-    padding-left: 0; /* Remove default padding for better alignment control */
+    padding-left: 0; 
 }
 
 li {
@@ -56,5 +69,20 @@ li {
 }
 
 footer {
-  padding-top: 150px;
+    padding-top: 150px;
+}
+
+/* ---------------------------------- */
+/* MEDIA QUERY for smaller screens (e.g., typical mobile phones) */
+/* This will apply styles when the screen is 480px or less */
+@media screen and (max-width: 480px) {
+    body {
+        /* Reduce base font size slightly on very small screens */
+        font-size: 14px; 
+    }
+
+    h3 {
+        /* Reduce h3 font size for small screens */
+        font-size: 1.2rem;
+    }
 }
