@@ -1,0 +1,60 @@
+
+body {
+  background: black;
+  color: white;
+  text-align: center;
+  list-style-position: inside;
+  font-family: "Poppins"
+}
+
+h1, h3 {
+    font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.75;
+
+}
+
+h3 {
+  padding: 30px 0px;
+  font-size: 30px;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.blue {
+  color: #00ffcf;
+}
+
+.start {
+  padding: 50px 0px;
+}
+
+.container {
+    /* Container Styling */
+    font-size: 20px;
+    border-radius: 30px;
+    width: 500px;
+    /* Centering the Container */
+    margin-left: auto;
+    margin-right: auto;
+    /* Aligning the Content */
+    text-align: left;
+    padding: 10px;
+}
+
+/* Specific adjustment for the list items */
+.container ul {
+    text-align: left;
+    padding-left: 0; /* Remove default padding for better alignment control */
+}
+
+li {
+    list-style-type: circle;
+}
+
+footer {
+  padding-top: 150px;
+}
