@@ -1,79 +1,113 @@
 /* Base Styles for all screens - Mobile-first approach is generally best */
 body {
-    background: black;
+    /* Subtle background texture/gradient for depth, similar to x.ai's dark background */
+    background: radial-gradient(circle at 50% 10%, rgba(30, 30, 30, 0.4) 0%, rgba(0, 0, 0, 1) 100%);
+    background-color: black; /* Fallback for older browsers */
     color: white;
     text-align: center;
     list-style-position: inside;
-    font-family: "Poppins", sans-serif; /* Add a generic fallback font */
+    /* Poppins is good, but for a more 'tech' feel, consider a modern sans-serif */
+    font-family: "Poppins", "Helvetica Neue", sans-serif;
     /* Use a relative font-size on the body for better accessibility */
-    font-size: 16px; 
+    font-size: 18px; /* Slightly larger base font for better readability */
+    line-height: 1.6; /* Improve line spacing */
 }
 
 /* Typography Styles */
 h1, h3 {
-  font-family: "Orbitron", sans-serif;
+    /* Orbitron is excellent for the tech/space theme */
+    font-family: "Orbitron", sans-serif;
     font-weight: 900;
     font-style: normal;
-    line-height: 1.75;
+    line-height: 1.2; /* Tighter line height for headlines */
+    /* Add a subtle text shadow for a glow effect, enhancing the futuristic feel */
+    text-shadow: 0 0 5px rgba(0, 255, 207, 0.4);
 }
 
 h3 {
     padding: 30px 0px;
-    font-size: 2.2rem; /* Use rem for scalability */
+    font-size: 2.8rem; /* A bit larger for impact */
+    /* Ensure the h3 color is the bright tech blue/cyan */
+    color: #00ffcf;
 }
 
 h4 {
-  font-size: 1.5rem;
+    font-size: 1.75rem; /* Slightly larger */
+    font-weight: 700;
+    line-height: 1.4;
 }
 
 h1 {
     /* Use 'clamp' for a fluid font size that is capped by a min/max value */
-    font-size: clamp(30px, 10vw, 50px);
+    font-size: clamp(36px, 12vw, 70px); /* Larger H1 for primary impact */
+    margin-bottom: 20px;
 }
 
 h2 {
     /* Ensure h2 naturally wraps without the fixed <br> */
-    padding: 0 10px; 
+    padding: 0 10px;
+    font-weight: 500; /* Lighter weight for secondary text */
+    font-size: 1.5rem;
+    opacity: 0.8; /* Slightly dimmed for contrast */
+    margin-bottom: 40px;
 }
 
 .blue {
+    /* Keep the vibrant tech color */
     color: #00ffcf;
+    text-shadow: 0 0 8px rgba(0, 255, 207, 0.7); /* Stronger glow for highlights */
 }
 
 .start {
-    padding: 50px 0px;
+    padding: 80px 0px; /* More vertical breathing room */
 }
 
 /* Responsive Container Styling */
 .container {
-    /* Use max-width and percentage width for responsiveness */
-    max-width: 500px;
-    width: 90%; 
-    
-    font-size: 1.25rem; /* Relative font size */
-    border-radius: 30px;
-    
+    /* Use a wider max-width for a more spacious, desktop-like feel */
+    max-width: 800px; /* Increased max-width */
+    width: 90%;
+
+    font-size: 1.2rem; /* Adjusted for new body font size */
+    /* Remove border-radius to match x.ai's sharp, modern corners */
+    border-radius: 0;
+
     /* Centering the Container */
     margin-left: auto;
     margin-right: auto;
-    
+
     /* Aligning the Content */
     text-align: left;
-    padding: 10px;
+    padding: 20px 0; /* Adjusted padding */
 }
 
 /* Specific adjustment for the list items */
 .container ul {
     text-align: left;
-    padding-left: 0; 
+    padding-left: 0;
+    margin-top: 30px;
 }
 
 li {
-    list-style-type: circle;
+    /* Use a subtle, modern dash or custom bullet for a minimalist list */
+    list-style-type: none; /* Remove default bullet */
+    position: relative;
+    padding-left: 20px; /* Space for custom bullet */
+    margin-bottom: 15px; /* More space between items */
+}
+
+li::before {
+    content: '—'; /* Use a modern dash as a bullet */
+    color: #00ffcf; /* Apply the accent color to the bullet */
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 footer {
-    padding-top: 150px;
+    padding-top: 200px; /* More space */
+    font-size: 0.9rem;
+    opacity: 0.6; /* Subtle footer */
 }
 
 /* ---------------------------------- */
@@ -82,25 +116,32 @@ footer {
 @media screen and (max-width: 480px) {
     body {
         /* Reduce base font size slightly on very small screens */
-        font-size: 14px; 
+        font-size: 16px;
     }
 
     h3 {
         /* Reduce h3 font size for small screens */
+        font-size: 2rem;
+    }
+
+    h4 {
         font-size: 1.4rem;
     }
-  
-  h4 {
-    font-size: 1.2rem;
-  }
+
+    h1 {
+        font-size: clamp(30px, 10vw, 50px);
+    }
 }
 
 #particle-canvas {
-    position: fixed; /* NEW: Fixed position to cover the entire viewport */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* NEW: Place the canvas behind all other content */
-    pointer-events: none; /* NEW: Ensures content remains clickable */
+    z-index: -1;
+    pointer-events: none;
+    /* Enhanced background: darker and more subtle */
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+    /* Adding a subtle star-field-like noise/texture is a common tech site practice, though tricky in pure CSS */
 }
